@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookie Clicker Madrileño</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+    }
+
+    #cookie {
+      font-size: 100px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s;
+    }
+
+    #cookie:active {
+      transform: scale(0.9);
+    }
+
+    .panel {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍪 Cookie Clicker Castizo 🍪</h1>
+  <p>Haz clic como si no hubiera mañana, tronco</p>
+
+  <div id="cookie">🍪</div>
+
+  <div class="panel">
+    <p>Galletas: <span id="cookies">0</span></p>
+    <p>Galletas por clic: <span id="power">1</span></p>
+  </div>
+
+  <button onclick="mejorar()">Mejorar clic (10 galletas)</button>
+<script src="codigo.js"> </script>
+  <script>
+    let cookies = 0;
+    let power = 1;
+
+    const cookiesSpan = document.getElementById("cookies");
+    const powerSpan = document.getElementById("power");
+    const cookie = document.getElementById("cookie");
+
+    cookie.addEventListener("click", () => {
+      cookies += power;
+      actualizar();
+    });
+
+    function mejorar() {
+      if (cookies >= 10) {
+        cookies -= 10;
+        power++;
+        alert("Venga, máquina, ahora haces más galletas 💪");
+        actualizar();
+      } else {
+        alert("Pero bueno… si no tienes galletas ni pa pipas 😤");
+      }
+    }
+
+    function actualizar() {
+      cookiesSpan.textContent = cookies;
+      powerSpan.textContent = power;
+    }
+  </script>
+
+</body>
+</html>
+
+    
